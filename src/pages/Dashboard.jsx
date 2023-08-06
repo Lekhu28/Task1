@@ -8,10 +8,10 @@ import List from "../component/list/List";
 import styles from "./Dashboard.module.css";
 import Card from "../component/card/Card";
 
-// Function to prepare data for the Card component
+
 const prepareCardData = (order) => {
   
-  // Modify this logic according to your actual order structure
+
   return {
     "Order ID": order["&id"],
     "Buy/Sell Indicator": order.executionDetails.buySellIndicator,
@@ -28,12 +28,12 @@ const Dashboard = () => {
   const [selectedOrderDetails, setSelectedOrderDetails] = useState({});
   const [selectedOrderTimeStamps, setSelectedOrderTimeStamps] = useState({});
 
-  // Currency conversion rates to USD (sample values, replace with actual rates)
+ 
   const currencyConversionRates = {
-    USD: 1,    // USD to USD conversion rate (1 USD = 1 USD)
-    EUR: 0.85, // EUR to USD conversion rate (1 EUR ≈ 0.85 USD)
-    GBP: 0.72, // GBP to USD conversion rate (1 GBP ≈ 0.72 USD)
-    JPY: 110.5 // JPY to USD conversion rate (1 JPY ≈ 110.5 USD)
+    USD: 1,   
+    EUR: 0.85, 
+    GBP: 0.72, 
+    JPY: 110.5 
   };
 
   const handleSelectOrder = (order) => {
@@ -50,12 +50,12 @@ const Dashboard = () => {
     };
   });
 
-  // Filter the orders based on the search input
+  
   const filteredOrders = orderWithTimestamps.filter(order =>
     order["&id"].toString().includes(searchText)
   );
 
-  // Calculate the total number of orders
+  
   const totalOrders = mockData.results.length;
 
   return (
